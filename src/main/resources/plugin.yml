@@ -1,0 +1,18 @@
+name: ShortenedGamemodeCommands
+version: 1.0
+main: com.itzilly.shortenedgamemodecommands.ShortenedGamemodeCommands
+authors: [ itzilly ]
+description: Shortens gamemode commands for quicker mode changing
+commands:
+  gmc:
+    aliases: []
+    description: Shortcut for /gamemode creative
+  gms:
+    aliases: []
+    description: Shortcut for /gamemode survival
+  gma:
+    aliases: []
+    description: Shortcut for /gamemode adventure
+  gmsp:
+    aliases: []
+    description: Shortcut for /gamemode spectator
