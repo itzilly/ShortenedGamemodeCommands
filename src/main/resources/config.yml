@@ -1,10 +1,11 @@
 ################################################################Configuration File################################################################
 #----------------------------------------------------------------------------------------------------------------------------------------------- #
 #
-# Config Version: 2.1
+# Config Version: 2.2
+# Plugin Version: 2.0-pre
 # DO NOT MESS WITH VALUES UNLESS YOU KNOW WHAT YOU'RE DOING
 #
-# For ALL permission nodes visit itzilly.com/sgc
+# For ALL permission nodes AND more information, visit www.itzilly.com/plugins/sgc
 #
 #
 #
@@ -13,6 +14,3 @@
 # This is true by default
 # Only allows true / false
 targetSendMessage: true
-#
-#
-# This toggles the message you recieve when you update your own gamemode using /gmc, /gms, /gmsp,
