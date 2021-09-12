@@ -5,6 +5,7 @@ import com.itzilly.shortenedgamemodecommands.commands.gms;
 import com.itzilly.shortenedgamemodecommands.commands.gma;
 import com.itzilly.shortenedgamemodecommands.commands.gmsp;
 
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class ShortenedGamemodeCommands extends JavaPlugin {
