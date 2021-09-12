@@ -1,5 +1,5 @@
 name: ShortenedGamemodeCommands
-version: 2.0-pre
+version: 3.0
 main: com.itzilly.shortenedgamemodecommands.ShortenedGamemodeCommands
 authors: [ itzilly ]
 description: Shortens gamemode commands for quicker mode changing

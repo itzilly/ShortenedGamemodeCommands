@@ -1,5 +1,10 @@
 package com.itzilly.shortenedgamemodecommands;
 
+import com.itzilly.shortenedgamemodecommands.commands.gmc;
+import com.itzilly.shortenedgamemodecommands.commands.gms;
+import com.itzilly.shortenedgamemodecommands.commands.gma;
+import com.itzilly.shortenedgamemodecommands.commands.gmsp;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class ShortenedGamemodeCommands extends JavaPlugin {
@@ -20,10 +25,13 @@ public final class ShortenedGamemodeCommands extends JavaPlugin {
         this.getConfig().options().copyDefaults();
         saveDefaultConfig();
 
-        getCommand("gmc").setExecutor(new GameModeCreative());
-        getCommand("gms").setExecutor(new GameModeSurvival());
-        getCommand("gmsp").setExecutor(new GameModeSpectator());
-        getCommand("gma").setExecutor(new GameModeAdventure());
+
+
+        getCommand("gmc").setExecutor(new gmc());
+        getCommand("gms").setExecutor(new gms());
+        getCommand("gma").setExecutor(new gma());
+        getCommand("gmsp").setExecutor(new gmsp());
+
 
     }
 
