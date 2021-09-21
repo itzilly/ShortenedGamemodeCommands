@@ -4,6 +4,7 @@ import com.itzilly.shortenedgamemodecommands.commands.gmc;
 import com.itzilly.shortenedgamemodecommands.commands.gms;
 import com.itzilly.shortenedgamemodecommands.commands.gma;
 import com.itzilly.shortenedgamemodecommands.commands.gmsp;
+import com.itzilly.shortenedgamemodecommands.commands.sgc;
 
 
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,8 +21,8 @@ public final class ShortenedGamemodeCommands extends JavaPlugin {
 
         plugin = this;
         System.out.println("[ShortenedGamemodeCommands] Plugin has been enabled!");
-        System.out.println("[ShortenedGamemodeCommands] If there are any issues, please make sure you are up to date!");
-        System.out.println("[ShortenedGamemodeCommands] Find a bug? Report it on the spigot page, or ");
+        System.out.println("[SGC] If there are any issues, please make sure you are up to date! Find a bug? Report it on the spigot page.");
+        System.out.println("[SGC] Use '/sgc help' to see list of commands");
 
         this.getConfig().options().copyDefaults();
         saveDefaultConfig();
@@ -32,6 +33,7 @@ public final class ShortenedGamemodeCommands extends JavaPlugin {
         getCommand("gms").setExecutor(new gms());
         getCommand("gma").setExecutor(new gma());
         getCommand("gmsp").setExecutor(new gmsp());
+        getCommand("sgc").setExecutor(new sgc());
 
 
     }

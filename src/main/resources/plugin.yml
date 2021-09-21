@@ -1,9 +1,12 @@
 name: ShortenedGamemodeCommands
-version: 3.0
+version: 4.0
 main: com.itzilly.shortenedgamemodecommands.ShortenedGamemodeCommands
 authors: [ itzilly ]
 description: Shortens gamemode commands for quicker mode changing
 commands:
+  sgc:
+    aliases: []
+    description: List commands for SGC
   gmc:
     aliases: []
     description: Shortcut for /gamemode creative
