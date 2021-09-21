@@ -50,8 +50,8 @@ public class gma implements CommandExecutor {
     }
 
     public void adventurePlayerSelf(Player player) {
-
-        if (player.hasPermission("sgc.adventure.self")) {
+        if (player.getGameMode() == GameMode.ADVENTURE) { System.out.println("Player is already in Adventure!");
+        } else if (player.hasPermission("sgc.adventure.self")) {
             player.sendMessage("Your gamemode has been updated to " + ChatColor.ITALIC + ChatColor.GRAY + "Adventure Mode");
             player.setGameMode(GameMode.ADVENTURE);
 

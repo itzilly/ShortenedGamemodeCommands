@@ -16,13 +16,12 @@ public class gmc implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
-
         //Change your own gamemode (the sender)
         if (sender instanceof Player && args.length == 0) {
             Player player = (Player) sender;
             creativePlayerSelf(player);
 
-        //Change other's gamemode (from sender to a target player)
+            //Change other's gamemode (from sender to a target player)
         } else if (sender instanceof Player) {
             Player target = Bukkit.getPlayerExact(args[0]);
             Player player = (Player) sender;
@@ -51,7 +50,8 @@ public class gmc implements CommandExecutor {
 
     public void creativePlayerSelf(Player player) {
 
-        if (player.hasPermission("sgc.creative.self")) {
+        if (player.getGameMode() == GameMode.CREATIVE) { System.out.println("Player is already in Creative!");
+        } else if (player.hasPermission("sgc.creative.self")) {
             player.sendMessage("Your gamemode has been updated to " + ChatColor.ITALIC + ChatColor.GRAY + "Creative Mode");
             player.setGameMode(GameMode.CREATIVE);
 

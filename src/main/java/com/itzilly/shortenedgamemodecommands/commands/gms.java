@@ -50,8 +50,8 @@ public class gms implements CommandExecutor {
     }
 
     public void survivalPlayerSelf(Player player) {
-
-        if (player.hasPermission("sgc.survival.self")) {
+        if (player.getGameMode() == GameMode.SURVIVAL) { System.out.println("Player is already in Survival!");
+        } else if (player.hasPermission("sgc.survival.self")) {
             player.sendMessage("Your gamemode has been updated to " + ChatColor.ITALIC + ChatColor.GRAY + "Survival Mode");
             player.setGameMode(GameMode.SURVIVAL);
 

@@ -50,8 +50,8 @@ public class gmsp implements CommandExecutor {
     }
 
     public void spectatorPlayerSelf(Player player) {
-
-        if (player.hasPermission("sgc.spectator.self")) {
+        if (player.getGameMode() == GameMode.SPECTATOR) { System.out.println("Player is already in Spectator!");
+        } else if (player.hasPermission("sgc.spectator.self")) {
             player.sendMessage("Your gamemode has been updated to " + ChatColor.ITALIC + ChatColor.GRAY + "Spectator Mode");
             player.setGameMode(GameMode.SPECTATOR);
 
