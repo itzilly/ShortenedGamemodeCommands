@@ -10,50 +10,52 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
+import static org.bukkit.Bukkit.getLogger;
 
-public class gmc implements CommandExecutor {
+
+public class SurvivalMode implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
+
         //Change your own gamemode (the sender)
         if (sender instanceof Player && args.length == 0) {
             Player player = (Player) sender;
-            creativePlayerSelf(player);
+            survivalPlayerSelf(player);
 
             //Change other's gamemode (from sender to a target player)
         } else if (sender instanceof Player) {
             Player target = Bukkit.getPlayerExact(args[0]);
             Player player = (Player) sender;
-            if (player.hasPermission("sgc.creative.others")) {
+            if (player.hasPermission("sgc.survival.others")) {
                 //If the player sending the command types their own name after the command it will not send 2 messages
                 if (player == target) {
-                    player.sendMessage("Your gamemode has been updated to " + ChatColor.ITALIC + ChatColor.GRAY + "Creative Mode");
-                    player.setGameMode(GameMode.CREATIVE);
+                    player.sendMessage("Your gamemode has been updated to " + ChatColor.ITALIC + ChatColor.GRAY + "Survival Mode");
+                    player.setGameMode(GameMode.SURVIVAL);
                 } else { //This will tell the sender who's gamemode has been updated to what mode
-                    player.sendMessage("You changed " + target.getDisplayName() + " into " + ChatColor.ITALIC + ChatColor.GRAY + "Creative Mode");  //Tell sender who's gamemode you changed
-                    target.setGameMode(GameMode.CREATIVE);
+                    player.sendMessage("You changed " + target.getDisplayName() + " into " + ChatColor.ITALIC + ChatColor.GRAY + "Survival Mode");  //Tell sender who's gamemode you changed
+                    target.setGameMode(GameMode.SURVIVAL);
 
                     //Check config.yml to see if the target player gets a message saying their gamemode has been updated
                     boolean targetSendMessage = ShortenedGamemodeCommands.plugin.getConfig().getBoolean("targetSendMessage");
                     if (targetSendMessage) {
-                        target.sendMessage("Your gamemode has been updated to " + ChatColor.ITALIC + ChatColor.GRAY + "Creative Mode");
+                        target.sendMessage("Your gamemode has been updated to " + ChatColor.ITALIC + ChatColor.GRAY + "Survival Mode");
                     }
                 }
             }
         }
 
-        if (sender instanceof ConsoleCommandSender && args.length == 0) { System.out.println("Please specify a player"); } //Console but no target specified
+        if (sender instanceof ConsoleCommandSender && args.length == 0) { getLogger().info("Please specify a player"); } //Console but no target specified
 
         return false;
     }
 
-    public void creativePlayerSelf(Player player) {
-
-        if (player.getGameMode() == GameMode.CREATIVE) { System.out.println("Player is already in Creative!");
-        } else if (player.hasPermission("sgc.creative.self")) {
-            player.sendMessage("Your gamemode has been updated to " + ChatColor.ITALIC + ChatColor.GRAY + "Creative Mode");
-            player.setGameMode(GameMode.CREATIVE);
+    public void survivalPlayerSelf(Player player) {
+        if (player.getGameMode() == GameMode.SURVIVAL) { getLogger().info("Player is already in Survival!");
+        } else if (player.hasPermission("sgc.survival.self")) {
+            player.sendMessage("Your gamemode has been updated to " + ChatColor.ITALIC + ChatColor.GRAY + "Survival Mode");
+            player.setGameMode(GameMode.SURVIVAL);
 
         } else {
             player.sendMessage(ChatColor.RED + "Insufficient permissions!");
