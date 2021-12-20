@@ -17,7 +17,7 @@
     <br />
     <a href="https://www.youtube.com/error404notfound">View Demo</a>
     ·
-    <a href="https://github.com/itzilly/ShortenedGamemodeGommands/issues">Have an issue?</a>
+    <a href="https://github.com/itzilly/ShortenedGamemodecommands/issues">Have an issue?</a>
   </p>
 </div>
 
